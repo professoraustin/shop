@@ -9,9 +9,13 @@ export const state = () => ({
 })
 
 export const getters = {
-  featuredProducts: state => state.storedata.slice(0, 3),
-  women: state => state.storedata.filter(el => el.gender === "Female"),
-  men: state => state.storedata.filter(el => el.gender === "Male"),
+  featuredProducts: state => state.storedata.slice(0, 4),
+  women: state => state.storedata.filter(el => el.category === "Female"),
+  men: state => state.storedata.filter(el => el.category === "Male"),
+  courses: state => state.storedata.filter(el => el.category === "Courses"),
+  coaching: state => state.storedata.filter(el => el.category === "Coaching"),
+  reviews: state => state.storedata.filter(el => el.category === "Reviews"),
+  toolkits: state => state.storedata.filter(el => el.category === "Toolkits"),
   cartCount: state => {
     if (!state.cart.length) return 0
     return state.cart.reduce((ac, next) => ac + next.quantity, 0)
@@ -45,7 +49,7 @@ export const actions = {
     try {
       await axios
         .post(
-          "https://ecommerce-netlify.netlify.com/.netlify/functions/index",
+          "https://professoraustin.netlify.com/.netlify/functions/index",
           {
             stripeEmail: payload.stripeEmail,
             stripeAmt: Math.floor(getters.cartTotal * 100), //it expects the price in cents, as an integer

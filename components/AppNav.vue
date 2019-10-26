@@ -10,7 +10,16 @@
           <nuxt-link to="/all">All</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/women">Women</nuxt-link>
+          <nuxt-link to="/courses">Courses</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/coaching">Coaching</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/reviews">Reviews</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/toolkits">Toolkits</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/men">Men</nuxt-link>
